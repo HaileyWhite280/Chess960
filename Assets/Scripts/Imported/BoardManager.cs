@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class BoardManager : MonoBehaviour
 {
+    [SerializeField] TMP_Text playerTurn;
+
     public static BoardManager Instance { get; set; }
     private bool[,] allowedMoves { get; set; }
 
@@ -34,7 +37,18 @@ public class BoardManager : MonoBehaviour
     void Start()
     {
         Instance = this;
-        SpawnAllChessmans();
+
+        if(GameManager.Instance.isChess == true)
+        {
+            Debug.Log("Chess");
+            SpawnAllChessmans();
+        }
+        else if (GameManager.Instance.isChess == false)
+        {
+            Debug.Log("960");
+            SpawnAllChessmans960();
+        }
+
         EnPassantMove = new int[2] { -1, -1 };
     }
 
@@ -58,6 +72,15 @@ public class BoardManager : MonoBehaviour
                     MoveChessman(selectionX, selectionY);
                 }
             }
+        }
+
+        if(isWhiteTurn)
+        {
+            playerTurn.text = "White Turn";
+        }
+        else
+        {
+            playerTurn.text = "Black Turn";
         }
 
         if (Input.GetKey("escape"))
@@ -212,6 +235,65 @@ public class BoardManager : MonoBehaviour
     }
 
     private void SpawnAllChessmans()
+    {
+        activeChessman = new List<GameObject>();
+        Chessmans = new Chessman[8, 8];
+
+        /////// White ///////
+
+        // King
+        SpawnChessman(0, 3, 0, true);
+
+        // Queen
+        SpawnChessman(1, 4, 0, true);
+
+        // Rooks
+        SpawnChessman(2, 0, 0, true);
+        SpawnChessman(2, 7, 0, true);
+
+        // Bishops
+        SpawnChessman(3, 2, 0, true);
+        SpawnChessman(3, 5, 0, true);
+
+        // Knights
+        SpawnChessman(4, 1, 0, true);
+        SpawnChessman(4, 6, 0, true);
+
+        // Pawns
+        for (int i = 0; i < 8; i++)
+        {
+            SpawnChessman(5, i, 1, true);
+        }
+
+
+        /////// Black ///////
+
+        // King
+        SpawnChessman(6, 4, 7, false);
+
+        // Queen
+        SpawnChessman(7, 3, 7, false);
+
+        // Rooks
+        SpawnChessman(8, 0, 7, false);
+        SpawnChessman(8, 7, 7, false);
+
+        // Bishops
+        SpawnChessman(9, 2, 7, false);
+        SpawnChessman(9, 5, 7, false);
+
+        // Knights
+        SpawnChessman(10, 1, 7, false);
+        SpawnChessman(10, 6, 7, false);
+
+        // Pawns
+        for (int i = 0; i < 8; i++)
+        {
+            SpawnChessman(11, i, 6, false);
+        }
+    }
+
+    private void SpawnAllChessmans960()
     {
         activeChessman = new List<GameObject>();
         Chessmans = new Chessman[8, 8];
