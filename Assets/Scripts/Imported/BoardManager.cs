@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour
 {
@@ -32,6 +33,10 @@ public class BoardManager : MonoBehaviour
     public Material selectedMat;
 
     public int[] EnPassantMove { set; get; }
+
+    //private List<int> chessUsed = new List<int>();
+
+    private List<int> chessSpace = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7 };
 
     // Use this for initialization
     void Start()
@@ -301,22 +306,22 @@ public class BoardManager : MonoBehaviour
         /////// White ///////
 
         // King
-        SpawnChessman(0, 3, 0, true);
+        SpawnChessman(0, 0, 0, true);
 
         // Queen
-        SpawnChessman(1, 4, 0, true);
+        SpawnChessman(1, 1, 0, true);
 
         // Rooks
-        SpawnChessman(2, 0, 0, true);
-        SpawnChessman(2, 7, 0, true);
+        SpawnChessman(2, 2, 0, true);
+        SpawnChessman(2, 3, 0, true);
 
         // Bishops
-        SpawnChessman(3, 2, 0, true);
+        SpawnChessman(3, 4, 0, true);
         SpawnChessman(3, 5, 0, true);
 
         // Knights
-        SpawnChessman(4, 1, 0, true);
         SpawnChessman(4, 6, 0, true);
+        SpawnChessman(4, 7, 0, true);
 
         // Pawns
         for (int i = 0; i < 8; i++)
@@ -328,22 +333,22 @@ public class BoardManager : MonoBehaviour
         /////// Black ///////
 
         // King
-        SpawnChessman(6, 4, 7, false);
+        //SpawnChessman(6, 4, 7, false);
 
         // Queen
-        SpawnChessman(7, 3, 7, false);
+        //SpawnChessman(7, 3, 7, false);
 
         // Rooks
-        SpawnChessman(8, 0, 7, false);
-        SpawnChessman(8, 7, 7, false);
+        //SpawnChessman(8, 0, 7, false);
+        //SpawnChessman(8, 7, 7, false);
 
         // Bishops
-        SpawnChessman(9, 2, 7, false);
-        SpawnChessman(9, 5, 7, false);
+        //SpawnChessman(9, 2, 7, false);
+        //SpawnChessman(9, 5, 7, false);
 
         // Knights
-        SpawnChessman(10, 1, 7, false);
-        SpawnChessman(10, 6, 7, false);
+        //SpawnChessman(10, 1, 7, false);
+        //SpawnChessman(10, 6, 7, false);
 
         // Pawns
         for (int i = 0; i < 8; i++)
@@ -355,9 +360,15 @@ public class BoardManager : MonoBehaviour
     private void EndGame()
     {
         if (isWhiteTurn)
+        {
             Debug.Log("White wins");
+            playerTurn.text = "White Win";
+        }
         else
+        {
             Debug.Log("Black wins");
+            playerTurn.text = "Black Win";
+        }
 
         foreach (GameObject go in activeChessman)
         {
@@ -366,8 +377,19 @@ public class BoardManager : MonoBehaviour
 
         isWhiteTurn = true;
         BoardHighlights.Instance.HideHighlights();
-        SpawnAllChessmans();
+
+        if (GameManager.Instance.isChess == true)
+        {
+            Debug.Log("Chess");
+            SpawnAllChessmans();
+        }
+        else if (GameManager.Instance.isChess == false)
+        {
+            Debug.Log("960");
+            SpawnAllChessmans960();
+        }
     }
+
 }
 
 
