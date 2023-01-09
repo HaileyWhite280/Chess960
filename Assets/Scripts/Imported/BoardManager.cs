@@ -2,13 +2,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class BoardManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text playerTurn;
+    //[SerializeField] TMP_Text playerTurn;
+    [SerializeField] GameObject whiteText;
+    [SerializeField] GameObject blackText;
+    [SerializeField] GameObject whiteWin;
+    [SerializeField] GameObject blackWin;
 
     public static BoardManager Instance { get; set; }
     private bool[,] allowedMoves { get; set; }
@@ -35,8 +38,6 @@ public class BoardManager : MonoBehaviour
 
     public int[] EnPassantMove { set; get; }
 
-    //private List<int> chessUsed = new List<int>();
-
     private List<int> chessSpaceInt = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7 };
     private List<int> shuffled = new List<int>();
     private List<int> reversed = new List<int>();
@@ -47,6 +48,11 @@ public class BoardManager : MonoBehaviour
     void Start()
     {
         Instance = this;
+
+        whiteText.SetActive(false);
+        blackText.SetActive(false);
+        whiteWin.SetActive(false);
+        blackWin.SetActive(false);
 
         if(GameManager.Instance.isChess == true)
         {
@@ -86,11 +92,13 @@ public class BoardManager : MonoBehaviour
 
         if(isWhiteTurn)
         {
-            playerTurn.text = "White Turn";
+            blackText.SetActive(false);
+            whiteText.SetActive(true);
         }
         else
         {
-            playerTurn.text = "Black Turn";
+            whiteText.SetActive(false);
+            blackText.SetActive(true);
         }
 
         if (Input.GetKey("escape"))
@@ -392,16 +400,6 @@ public class BoardManager : MonoBehaviour
 
         Debug.Log("Reversed: " + log);
 
-        shuffled.Reverse();
-        log = "";
-        foreach (var item in shuffled)
-        {
-            log += item + ", ";
-        }
-
-        Debug.Log("Shuffle ReReverse: " + log);
-
-
         // King
         SpawnChessman(6, reversed[0], 7, false);
 
@@ -432,12 +430,16 @@ public class BoardManager : MonoBehaviour
         if (isWhiteTurn)
         {
             Debug.Log("White wins");
-            playerTurn.text = "White Win";
+            whiteWin.SetActive(true);
+            whiteText.SetActive(false);
+            blackText.SetActive(false);
         }
         else
         {
             Debug.Log("Black wins");
-            playerTurn.text = "Black Win";
+            blackWin.SetActive(true);
+            whiteText.SetActive(false);
+            blackText.SetActive(false);
         }
 
         foreach (GameObject go in activeChessman)
@@ -446,9 +448,10 @@ public class BoardManager : MonoBehaviour
         }
 
         isWhiteTurn = true;
+        passed = false;
         BoardHighlights.Instance.HideHighlights();
 
-        if (GameManager.Instance.isChess == true)
+/*        if (GameManager.Instance.isChess == true)
         {
             Debug.Log("Chess");
             SpawnAllChessmans();
@@ -457,7 +460,7 @@ public class BoardManager : MonoBehaviour
         {
             Debug.Log("960");
             SpawnAllChessmans960();
-        }
+        }*/
     }
 
     private bool CheckRooks(List<int> list)
