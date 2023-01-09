@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -36,7 +37,11 @@ public class BoardManager : MonoBehaviour
 
     //private List<int> chessUsed = new List<int>();
 
-    private List<int> chessSpace = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7 };
+    private List<int> chessSpaceInt = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7 };
+    private List<int> shuffled = new List<int>();
+    private List<int> reversed = new List<int>();
+
+    private bool passed = false;
 
     // Use this for initialization
     void Start()
@@ -305,23 +310,68 @@ public class BoardManager : MonoBehaviour
 
         /////// White ///////
 
+        shuffled = chessSpaceInt.OrderBy(x => Random.value).ToList();
+
+        string log = "";
+        foreach(var item in shuffled)
+        {
+            log += item + ", ";
+        }
+
+        Debug.Log("Shuffled: " + log);
+
+        while(!passed)
+        {
+            bool bishop = CheckBishops(shuffled);
+            bool rook = CheckRooks(shuffled);
+
+            if(!bishop || !rook)
+            {
+                shuffled = chessSpaceInt.OrderBy(x => Random.value).ToList();
+                Debug.Log("FAILED");
+
+                passed = false;
+
+                log = "";
+                foreach (var item in shuffled)
+                {
+                    log += item + ", ";
+                }
+
+                Debug.Log(log);
+            }
+            else if(bishop && rook)
+            {
+                passed = true;
+            }
+        }
+
+        Debug.Log("PASSED");
+        log = "";
+        foreach (var item in shuffled)
+        {
+            log += item + ", ";
+        }
+
+        Debug.Log(log);
+
         // King
-        SpawnChessman(0, 0, 0, true);
+        SpawnChessman(0, shuffled[0], 0, true);
 
         // Queen
-        SpawnChessman(1, 1, 0, true);
+        SpawnChessman(1, shuffled[1], 0, true);
 
         // Rooks
-        SpawnChessman(2, 2, 0, true);
-        SpawnChessman(2, 3, 0, true);
+        SpawnChessman(2, shuffled[2], 0, true);
+        SpawnChessman(2, shuffled[3], 0, true);
 
         // Bishops
-        SpawnChessman(3, 4, 0, true);
-        SpawnChessman(3, 5, 0, true);
+        SpawnChessman(3, shuffled[4], 0, true);
+        SpawnChessman(3, shuffled[5], 0, true);
 
         // Knights
-        SpawnChessman(4, 6, 0, true);
-        SpawnChessman(4, 7, 0, true);
+        SpawnChessman(4, shuffled[6], 0, true);
+        SpawnChessman(4, shuffled[7], 0, true);
 
         // Pawns
         for (int i = 0; i < 8; i++)
@@ -329,26 +379,46 @@ public class BoardManager : MonoBehaviour
             SpawnChessman(5, i, 1, true);
         }
 
-
         /////// Black ///////
 
+        shuffled.Reverse();
+        reversed = shuffled;
+
+        log = "";
+        foreach (var item in reversed)
+        {
+            log += item + ", ";
+        }
+
+        Debug.Log("Reversed: " + log);
+
+        shuffled.Reverse();
+        log = "";
+        foreach (var item in shuffled)
+        {
+            log += item + ", ";
+        }
+
+        Debug.Log("Shuffle ReReverse: " + log);
+
+
         // King
-        //SpawnChessman(6, 4, 7, false);
+        SpawnChessman(6, reversed[0], 7, false);
 
         // Queen
-        //SpawnChessman(7, 3, 7, false);
+        SpawnChessman(7, reversed[1], 7, false);
 
         // Rooks
-        //SpawnChessman(8, 0, 7, false);
-        //SpawnChessman(8, 7, 7, false);
+        SpawnChessman(8, reversed[2], 7, false);
+        SpawnChessman(8, reversed[3], 7, false);
 
         // Bishops
-        //SpawnChessman(9, 2, 7, false);
-        //SpawnChessman(9, 5, 7, false);
+        SpawnChessman(9, reversed[4], 7, false);
+        SpawnChessman(9, reversed[5], 7, false);
 
         // Knights
-        //SpawnChessman(10, 1, 7, false);
-        //SpawnChessman(10, 6, 7, false);
+        SpawnChessman(10, reversed[6], 7, false);
+        SpawnChessman(10, reversed[7], 7, false);
 
         // Pawns
         for (int i = 0; i < 8; i++)
@@ -390,6 +460,87 @@ public class BoardManager : MonoBehaviour
         }
     }
 
+    private bool CheckRooks(List<int> list)
+    {
+        //king must be in between
+        int rook1 = list[2];
+        int rook2 = list[3];
+        int king = list[0];
+
+        int min;
+        int max;
+
+        if(rook1 < rook2)
+        {
+            min = rook1;
+            max = rook2;
+        }
+        else
+        {
+            min = rook2;
+            max = rook1;
+        }
+
+        if(min < king && max > king)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    private bool CheckBishops(List<int> list)
+    {
+        //placed on opposite colors
+        int bishop1 = list[4];
+        int bishop2 = list[5];
+
+        if(bishop1 == 0)
+        {
+            if(bishop2 == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if(bishop1 % 2 == 0)
+        {
+            if(bishop2 % 2 == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if(bishop2 % 2 == 0)
+        {
+            if(bishop1 % 2 == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        else if(bishop1 % 2 == 1 && bishop2 % 2 == 1)
+        {
+            return false;
+        }
+        else
+        {
+            Debug.Log("Bishop1: " + (bishop1 % 2) + " Bishop2: " + (bishop2 % 2));
+            return true;
+        }
+
+    }
 }
 
 
