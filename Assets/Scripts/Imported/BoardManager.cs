@@ -40,9 +40,14 @@ public class BoardManager : MonoBehaviour
 
     private List<int> chessSpaceInt = new List<int>() { 0, 1, 2, 3, 4, 5, 6, 7 };
     private List<int> shuffled = new List<int>();
-    private List<int> reversed = new List<int>();
-
     private bool passed = false;
+
+    //for unit testing
+    public static List<int> whitePlacement = new List<int>();
+    public static List<int> blackPlacement = new List<int>();
+
+    public static List<int> white960Placement = new List<int>();
+    public static List<int> black960Placement = new List<int>();
 
     // Use this for initialization
     void Start()
@@ -252,7 +257,7 @@ public class BoardManager : MonoBehaviour
         return origin;
     }
 
-    private void SpawnAllChessmans()
+    public void SpawnAllChessmans()
     {
         activeChessman = new List<GameObject>();
         Chessmans = new Chessman[8, 8];
@@ -277,12 +282,14 @@ public class BoardManager : MonoBehaviour
         SpawnChessman(4, 1, 0, true);
         SpawnChessman(4, 6, 0, true);
 
+        whitePlacement = new List<int>() { 2, 4, 3, 0, 1, 3, 4, 2 };
+
         // Pawns
         for (int i = 0; i < 8; i++)
         {
             SpawnChessman(5, i, 1, true);
+            whitePlacement.Add(5);
         }
-
 
         /////// Black ///////
 
@@ -304,6 +311,8 @@ public class BoardManager : MonoBehaviour
         SpawnChessman(10, 1, 7, false);
         SpawnChessman(10, 6, 7, false);
 
+        blackPlacement = new List<int>() { 8, 10, 9, 7, 6, 9, 10, 8};
+
         // Pawns
         for (int i = 0; i < 8; i++)
         {
@@ -311,42 +320,26 @@ public class BoardManager : MonoBehaviour
         }
     }
 
-    private void SpawnAllChessmans960()
+    public void SpawnAllChessmans960()
     {
         activeChessman = new List<GameObject>();
         Chessmans = new Chessman[8, 8];
 
         /////// White ///////
 
-        shuffled = chessSpaceInt.OrderBy(x => Random.value).ToList();
-
-        string log = "";
-        foreach(var item in shuffled)
-        {
-            log += item + ", ";
-        }
-
-        Debug.Log("Shuffled: " + log);
+        List<int> list = new List<int>();
+        list = chessSpaceInt.OrderBy(x => Random.value).ToList();
 
         while(!passed)
         {
-            bool bishop = CheckBishops(shuffled);
-            bool rook = CheckRooks(shuffled);
+            bool bishop = CheckBishops(list);
+            bool rook = CheckRooks(list);
 
             if(!bishop || !rook)
             {
-                shuffled = chessSpaceInt.OrderBy(x => Random.value).ToList();
-                Debug.Log("FAILED");
+                list = chessSpaceInt.OrderBy(x => Random.value).ToList();
 
                 passed = false;
-
-                log = "";
-                foreach (var item in shuffled)
-                {
-                    log += item + ", ";
-                }
-
-                Debug.Log(log);
             }
             else if(bishop && rook)
             {
@@ -354,74 +347,74 @@ public class BoardManager : MonoBehaviour
             }
         }
 
-        Debug.Log("PASSED");
-        log = "";
-        foreach (var item in shuffled)
-        {
-            log += item + ", ";
-        }
-
-        Debug.Log(log);
+        shuffled = list;
 
         // King
         SpawnChessman(0, shuffled[0], 0, true);
+        white960Placement.Add(shuffled[0]);
 
         // Queen
         SpawnChessman(1, shuffled[1], 0, true);
+        white960Placement.Add(shuffled[1]);
 
         // Rooks
         SpawnChessman(2, shuffled[2], 0, true);
         SpawnChessman(2, shuffled[3], 0, true);
+        white960Placement.Add(shuffled[2]);
+        white960Placement.Add(shuffled[3]);
 
         // Bishops
         SpawnChessman(3, shuffled[4], 0, true);
         SpawnChessman(3, shuffled[5], 0, true);
+        white960Placement.Add(shuffled[4]);
+        white960Placement.Add(shuffled[5]);
 
         // Knights
         SpawnChessman(4, shuffled[6], 0, true);
         SpawnChessman(4, shuffled[7], 0, true);
+        white960Placement.Add(shuffled[6]);
+        white960Placement.Add(shuffled[7]);
 
         // Pawns
         for (int i = 0; i < 8; i++)
         {
             SpawnChessman(5, i, 1, true);
+            white960Placement.Add(i);
         }
 
         /////// Black ///////
 
-        shuffled.Reverse();
-        reversed = shuffled;
-
-        log = "";
-        foreach (var item in reversed)
-        {
-            log += item + ", ";
-        }
-
-        Debug.Log("Reversed: " + log);
-
         // King
-        SpawnChessman(6, reversed[0], 7, false);
+        SpawnChessman(6, shuffled[7], 7, false);
+        black960Placement.Add(shuffled[7]);
 
         // Queen
-        SpawnChessman(7, reversed[1], 7, false);
+        SpawnChessman(7, shuffled[6], 7, false);
+        black960Placement.Add(shuffled[6]);
 
         // Rooks
-        SpawnChessman(8, reversed[2], 7, false);
-        SpawnChessman(8, reversed[3], 7, false);
+        SpawnChessman(8, shuffled[5], 7, false);
+        SpawnChessman(8, shuffled[4], 7, false);
+        black960Placement.Add(shuffled[5]);
+        black960Placement.Add(shuffled[4]);
 
         // Bishops
-        SpawnChessman(9, reversed[4], 7, false);
-        SpawnChessman(9, reversed[5], 7, false);
+        SpawnChessman(9, shuffled[3], 7, false);
+        SpawnChessman(9, shuffled[2], 7, false);
+        black960Placement.Add(shuffled[3]);
+        black960Placement.Add(shuffled[2]);
 
         // Knights
-        SpawnChessman(10, reversed[6], 7, false);
-        SpawnChessman(10, reversed[7], 7, false);
+        SpawnChessman(10, shuffled[1], 7, false);
+        SpawnChessman(10, shuffled[0], 7, false);
+        black960Placement.Add(shuffled[1]);
+        black960Placement.Add(shuffled[0]);
 
         // Pawns
         for (int i = 0; i < 8; i++)
         {
             SpawnChessman(11, i, 6, false);
+            black960Placement.Add(i);
         }
     }
 

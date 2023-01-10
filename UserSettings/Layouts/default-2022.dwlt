@@ -40,11 +40,11 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 582.8
-    width: 267.59998
-    height: 189.20001
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+    y: 409.2
+    width: 419.19995
+    height: 362.8
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -67,14 +67,14 @@ MonoBehaviour:
   - {fileID: 2}
   m_Position:
     serializedVersion: 2
-    x: 1268.4
+    x: 1116.8
     y: 0
-    width: 267.59998
+    width: 419.19995
     height: 772
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 455
+  controlID: 132
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -91,9 +91,9 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 672
-    width: 1067.6
-    height: 100
+    y: 486.8
+    width: 880.80005
+    height: 285.2
   m_MinSize: {x: 102, y: 121}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 22}
@@ -118,14 +118,14 @@ MonoBehaviour:
   - {fileID: 4}
   m_Position:
     serializedVersion: 2
-    x: 200.8
+    x: 236
     y: 0
-    width: 1067.6
+    width: 880.80005
     height: 772
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 76
+  controlID: 95
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -143,7 +143,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 399.6
-    width: 200.8
+    width: 236
     height: 372.4
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
@@ -171,7 +171,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 200.8
+    width: 236
     height: 772
   m_MinSize: {x: 100, y: 200}
   m_MaxSize: {x: 8096, y: 16192}
@@ -201,7 +201,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 134
+  controlID: 131
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,10 +219,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 267.59998
-    height: 582.8
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+    width: 419.19995
+    height: 409.2
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -245,10 +245,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 200.8
+    width: 236
     height: 399.6
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 19}
   m_Panes:
   - {fileID: 19}
@@ -344,12 +344,12 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1268.4
+    width: 1116.8
     height: 772
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 0
-  controlID: 75
+  controlID: 94
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -367,8 +367,8 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1067.6
-    height: 672
+    width: 880.80005
+    height: 486.8
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 21}
@@ -397,31 +397,31 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1268.4
-    y: 654.8
-    width: 266.59998
-    height: 168.20001
+    x: 1116.8
+    y: 481.2
+    width: 418.19995
+    height: 341.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
     m_SaveData: []
   m_Spl:
-    ID: 478
-    splitterInitialOffset: 0
+    ID: 959
+    splitterInitialOffset: 261.8
     currentActiveSplitter: -1
     realSizes:
-    - 66
-    - 32
+    - 193
+    - 79
     relativeSizes:
-    - 0.75
-    - 0.25
+    - 0.70955884
+    - 0.29044116
     minSizes:
     - 32
     - 32
     maxSizes:
     - 0
     - 0
-    lastTotalSize: 98
+    lastTotalSize: 272
     splitSize: 6
     xOffset: 0
     m_Version: 1
@@ -429,17 +429,165 @@ MonoBehaviour:
     oldMinSizes: 
     oldMaxSizes: 
     oldSplitSize: 0
-  m_TestTypeToolbarIndex: 1
+  m_TestTypeToolbarIndex: 0
   m_PlayModeTestListGUI:
-    m_Window: {fileID: 0}
-    m_NewResultList: []
-    m_ResultText: 
+    m_Window: {fileID: 16}
+    m_NewResultList:
+    - id: 1012
+      uniqueId: '[One Day Project_ 3D Chess][suite]'
+      name: One Day Project_ 3D Chess
+      fullName: One Day Project_ 3D Chess
+      resultStatus: 1
+      duration: 10.7518425
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 
+      parentUniqueId: 
+    - id: 1015
+      uniqueId: '[Playmode][C:/Users/Hailey/Documents/School Docs/3 Year/Winter 2023/ExistingCode/Chess960/Library/ScriptAssemblies/Playmode.dll][suite]'
+      name: Playmode.dll
+      fullName: C:/Users/Hailey/Documents/School Docs/3 Year/Winter 2023/ExistingCode/Chess960/Library/ScriptAssemblies/Playmode.dll
+      resultStatus: 1
+      duration: 10.724004
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1012
+      parentUniqueId: '[One Day Project_ 3D Chess][suite]'
+    - id: 1013
+      uniqueId: Playmode.dll/[Playmode][ChessPlayTest][suite]
+      name: ChessPlayTest
+      fullName: ChessPlayTest
+      resultStatus: 1
+      duration: 10.716009
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 1
+      categories: []
+      parentId: 1015
+      parentUniqueId: '[Playmode][C:/Users/Hailey/Documents/School Docs/3 Year/Winter
+        2023/ExistingCode/Chess960/Library/ScriptAssemblies/Playmode.dll][suite]'
+    - id: 1005
+      uniqueId: Playmode.dll/ChessPlayTest/[Playmode][ChessPlayTest.Chess960BlackLikeWhite]
+      name: Chess960BlackLikeWhite
+      fullName: ChessPlayTest.Chess960BlackLikeWhite
+      resultStatus: 1
+      duration: 2.2728639
+      messages: 
+      output: '960
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Playmode.dll/[Playmode][ChessPlayTest][suite]
+    - id: 1005
+      uniqueId: Playmode.dll/ChessPlayTest/[Playmode][ChessPlayTest.Chess960WhiteBishopPlacement]
+      name: Chess960WhiteBishopPlacement
+      fullName: ChessPlayTest.Chess960WhiteBishopPlacement
+      resultStatus: 1
+      duration: 2.1236198
+      messages: 
+      output: '960
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Playmode.dll/[Playmode][ChessPlayTest][suite]
+    - id: 1004
+      uniqueId: Playmode.dll/ChessPlayTest/[Playmode][ChessPlayTest.Chess960WhiteRooksPlacement]
+      name: Chess960WhiteRooksPlacement
+      fullName: ChessPlayTest.Chess960WhiteRooksPlacement
+      resultStatus: 1
+      duration: 2.1064842
+      messages: 
+      output: '960
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Playmode.dll/[Playmode][ChessPlayTest][suite]
+    - id: 1003
+      uniqueId: Playmode.dll/ChessPlayTest/[Playmode][ChessPlayTest.ChessPlacementsBlack]
+      name: ChessPlacementsBlack
+      fullName: ChessPlayTest.ChessPlacementsBlack
+      resultStatus: 1
+      duration: 2.094151
+      messages: 
+      output: 'Chess
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: Playmode.dll/[Playmode][ChessPlayTest][suite]
+    - id: 1014
+      uniqueId: Playmode.dll/ChessPlayTest/[Playmode][ChessPlayTest.ChessPlacementsWhite]
+      name: ChessPlacementsWhite
+      fullName: ChessPlayTest.ChessPlacementsWhite
+      resultStatus: 1
+      duration: 2.068705
+      messages: 
+      output: 'Chess
+
+'
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1013
+      parentUniqueId: Playmode.dll/[Playmode][ChessPlayTest][suite]
+    m_ResultText: 'Chess960WhiteBishopPlacement (2.124s)
+
+      ---
+
+      960'
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 
+      m_SelectedIDs: f04e00c1
+      m_LastClickedID: -1056944400
+      m_ExpandedIDs: 0ee0c9c7510177d3edf5573effffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -463,7 +611,8 @@ MonoBehaviour:
       NotRunHidden: 0
       m_SearchString: 
       selectedCategoryMask: 0
-      availableCategories: []
+      availableCategories:
+      - Uncategorized
     m_SelectedOption: 0
   m_EditModeTestListGUI:
     m_Window: {fileID: 16}
@@ -472,8 +621,8 @@ MonoBehaviour:
       uniqueId: '[One Day Project_ 3D Chess][suite]'
       name: One Day Project_ 3D Chess
       fullName: One Day Project_ 3D Chess
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0808309
       messages: 
       output: 
       stacktrace: 
@@ -484,12 +633,12 @@ MonoBehaviour:
       categories: []
       parentId: 
       parentUniqueId: 
-    - id: 1004
+    - id: 1008
       uniqueId: '[EditMode][C:/Users/Hailey/Documents/School Docs/3 Year/Winter 2023/ExistingCode/Chess960/Library/ScriptAssemblies/EditMode.dll][suite]'
       name: EditMode.dll
       fullName: C:/Users/Hailey/Documents/School Docs/3 Year/Winter 2023/ExistingCode/Chess960/Library/ScriptAssemblies/EditMode.dll
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0338319
       messages: 
       output: 
       stacktrace: 
@@ -504,8 +653,8 @@ MonoBehaviour:
       uniqueId: EditMode.dll/[EditMode][ChessTests][suite]
       name: ChessTests
       fullName: ChessTests
-      resultStatus: 0
-      duration: 0
+      resultStatus: 1
+      duration: 0.0316089
       messages: 
       output: 
       stacktrace: 
@@ -514,15 +663,15 @@ MonoBehaviour:
       description: 
       isSuite: 1
       categories: []
-      parentId: 1004
+      parentId: 1008
       parentUniqueId: '[EditMode][C:/Users/Hailey/Documents/School Docs/3 Year/Winter
         2023/ExistingCode/Chess960/Library/ScriptAssemblies/EditMode.dll][suite]'
-    - id: 1002
-      uniqueId: EditMode.dll/ChessTests/[EditMode][ChessTests.ChessPlacement]
-      name: ChessPlacement
-      fullName: ChessTests.ChessPlacement
-      resultStatus: 0
-      duration: 0
+    - id: 1007
+      uniqueId: EditMode.dll/ChessTests/[EditMode][ChessTests.Chess960PlacementBlackBishops]
+      name: Chess960PlacementBlackBishops
+      fullName: ChessTests.Chess960PlacementBlackBishops
+      resultStatus: 1
+      duration: 0.0058657
       messages: 
       output: 
       stacktrace: 
@@ -534,13 +683,98 @@ MonoBehaviour:
       - Uncategorized
       parentId: 1001
       parentUniqueId: EditMode.dll/[EditMode][ChessTests][suite]
-    m_ResultText: 
+    - id: 1005
+      uniqueId: EditMode.dll/ChessTests/[EditMode][ChessTests.Chess960PlacementBlackRooks]
+      name: Chess960PlacementBlackRooks
+      fullName: ChessTests.Chess960PlacementBlackRooks
+      resultStatus: 1
+      duration: 0.0001735
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][ChessTests][suite]
+    - id: 1006
+      uniqueId: EditMode.dll/ChessTests/[EditMode][ChessTests.Chess960PlacementWhiteBishops]
+      name: Chess960PlacementWhiteBishops
+      fullName: ChessTests.Chess960PlacementWhiteBishops
+      resultStatus: 1
+      duration: 0.0002092
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][ChessTests][suite]
+    - id: 1004
+      uniqueId: EditMode.dll/ChessTests/[EditMode][ChessTests.Chess960PlacementWhiteRooks]
+      name: Chess960PlacementWhiteRooks
+      fullName: ChessTests.Chess960PlacementWhiteRooks
+      resultStatus: 1
+      duration: 0.0001108
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][ChessTests][suite]
+    - id: 1003
+      uniqueId: EditMode.dll/ChessTests/[EditMode][ChessTests.ChessPlacementBlack]
+      name: ChessPlacementBlack
+      fullName: ChessTests.ChessPlacementBlack
+      resultStatus: 1
+      duration: 0.0002
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][ChessTests][suite]
+    - id: 1002
+      uniqueId: EditMode.dll/ChessTests/[EditMode][ChessTests.ChessPlacementWhite]
+      name: ChessPlacementWhite
+      fullName: ChessTests.ChessPlacementWhite
+      resultStatus: 1
+      duration: 0.0089354
+      messages: 
+      output: 
+      stacktrace: 
+      notRunnable: 0
+      ignoredOrSkipped: 0
+      description: 
+      isSuite: 0
+      categories:
+      - Uncategorized
+      parentId: 1001
+      parentUniqueId: EditMode.dll/[EditMode][ChessTests][suite]
+    m_ResultText: ChessPlacementWhite (0.009s)
     m_ResultStacktrace: 
     m_TestListState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 510177d3ffffff7f
+      m_SelectedIDs: aa8320f7
+      m_LastClickedID: -148864086
+      m_ExpandedIDs: 0ca81da0510177d30e6202dcffffff7f
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -589,7 +823,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 471.6
-    width: 199.8
+    width: 235
     height: 351.4
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -607,8 +841,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/Tests/EditMode
+    m_Folders: []
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -623,7 +856,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: b07f0000
     m_LastClickedID: 32688
-    m_ExpandedIDs: 00000000d4580000d6580000d8580000
+    m_ExpandedIDs: 00000000e2580000e4580000e6580000e8580000ea580000ec580000ee580000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -648,10 +881,10 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 142.6}
+    scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000d4580000d6580000d858000000590000325c0000505c00005c5c0000
+    m_ExpandedIDs: ffffffff00000000e2580000e4580000e6580000e8580000ea580000ec580000ee5800001c590000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -728,10 +961,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 1268.4
+    x: 1116.8
     y: 72
-    width: 266.59998
-    height: 561.8
+    width: 418.19995
+    height: 388.2
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -772,7 +1005,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 72
-    width: 199.8
+    width: 235
     height: 378.6
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
@@ -781,9 +1014,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 665c0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 3adeffffaceafffff0f7ffffc8f9ffff30fbffffbe5c0000
+      m_ExpandedIDs: 88cbfeffcccbfeff22d4feffa4d6feffe8d6feff8ed9feffa0dafeffe4dafeffe2e1feff94e6feffd8e6feffc2edfeff942affff6831ffff8439ffffc839ffffc640ffffe241ffff2642ffffe044ffffce49ffff124afffffc50ffff9469ffff9c6affffe06affffde71ffff2272ffff6672ffff6479fffffc7bffff407cffffd281ffff6283ffffa683ffff4c86ffff8c86ffffd086ffff4e8cffff5496ffff9896ffffaa9afffff4abffff38acffff4ab0ffffa2b8ffffe6b8ffffa6bbffffc6bcffff0abdffff64beffff54bfffff98bffffff2c0fffff0c1ffff34c2ffffa2c3ffff8cc4ffffd0c4ffff14c6ffff12c7ffff56c7ffffa6c8ffff3acaffff7ecaffffd6cbffffc4ccffff08cdffff4cceffff5ecfffffa2cffffff2d0ffffead3ffff2ed4ffff7ed5fffffcd6ffff40d7ffff7cd8ffffc4dbffff08dcffff44ddffff42deffff86deffffc2dfffff64e1ffffa8e1ffff00e3fffffae3ffff3ee4ffff82e5ffffb8eafffffceaffff3aecffff36edffff7aedffffb8eeffff46f1ffff8af1ffffcaf2ffffbef4ffff30fbffff9e5b0000985c00004a6000008a8a0000868b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -828,10 +1061,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 200.8
+    x: 236
     y: 72
-    width: 1065.6
-    height: 486.6
+    width: 878.80005
+    height: 465.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1066,9 +1299,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 960, y: 540, z: 0}
+    m_Target: {x: 4.120231, y: -0.8601103, z: 4.236354}
     speed: 2
-    m_Value: {x: 960, y: 540, z: 0}
+    m_Value: {x: 4.120231, y: -0.8601103, z: 4.236354}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1114,13 +1347,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0, y: 0, z: 0, w: 1}
+    m_Target: {x: 0.3871103, y: -0.0055329595, z: 0.0023205287, w: 0.922021}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0, w: 1}
+    m_Value: {x: 0.38710776, y: -0.005532923, z: 0.0023205136, w: 0.92201495}
   m_Size:
-    m_Target: 552.0988
+    m_Target: 4.0404186
     speed: 2
-    m_Value: 552.0988
+    m_Value: 4.0404186
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -1166,10 +1399,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 200.8
+    x: 236
     y: 72
-    width: 1065.6
-    height: 651
+    width: 878.80005
+    height: 465.8
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -1221,23 +1454,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1065.6
-      height: 630
+      width: 878.80005
+      height: 444.8
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 532.8, y: 315}
+    m_Translation: {x: 439.40002, y: 222.4}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -532.8
-      y: -315
-      width: 1065.6
-      height: 630
+      x: -439.40002
+      y: -222.4
+      width: 878.80005
+      height: 444.8
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 2664, y: 1627.5}
+  m_LastWindowPixelSize: {x: 2197, y: 1164.5}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1266,10 +1499,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 200.8
-    y: 744
-    width: 1065.6
-    height: 79
+    x: 236
+    y: 558.8
+    width: 878.80005
+    height: 264.2
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
